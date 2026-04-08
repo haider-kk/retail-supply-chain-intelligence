@@ -1,0 +1,33 @@
+# Project Configuration
+project:
+  name: "Retail Supply Chain Intelligence"
+  version: "1.0.0"
+
+# Data Paths
+paths:
+  raw_data: "data/raw/"
+  staging_data: "data/staging/"
+  warehouse_data : "data/warehouse/"
+  reports: "reports/"
+  logs: "logs/pipeline.log"
+
+# Database Configuration
+database:
+  name: "retail_warehouse.db"
+  path: "data/warehouse/"
+
+# Pipeline Settings
+pipeline:
+  chunk_size: 10000
+  log_level: "INFO"
+
+# Dataset Files
+files:
+  orders: "olist_orders_dataset.csv"
+  customers: "olist_customers_dataset.csv"
+  products: "olist_products_dataset.csv"
+  order_items: "olist_order_items_dataset.csv"
+  payments: "olist_payments_dataset.csv"
+  reviews: "olist_order_reviews_dataset.csv"
+  sellers: "olist_sellers_dataset.csv"
+  geolocation: "olist_geolocation_dataset.csv"
