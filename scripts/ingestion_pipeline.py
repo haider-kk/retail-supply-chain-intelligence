@@ -59,11 +59,11 @@ def ingest_raw_data(config, logger):
         try:
             df = pd.read_csv(filepath)
             dataframes[name] = df
-            logger.info(f"✅ Loaded {filename} | Rows: {df.shape[0]:,} | Columns: {df.shape[1]}")
+            logger.info(f" Loaded {filename} | Rows: {df.shape[0]:,} | Columns: {df.shape[1]}")
         except FileNotFoundError:
-            logger.error(f"❌ File not found: {filepath}")
+            logger.error(f" File not found: {filepath}")
         except Exception as e:
-            logger.error(f"❌ Error loading {filename}: {str(e)}")
+            logger.error(f" Error loading {filename}: {str(e)}")
     
     return dataframes
 
@@ -115,7 +115,7 @@ def main():
     validation_results = validate_data(dataframes, logger)
     
     logger.info("\n" + "=" * 60)
-    logger.info(f"✅ INGESTION COMPLETE | {len(dataframes)} files loaded")
+    logger.info(f" INGESTION COMPLETE | {len(dataframes)} files loaded")
     logger.info("=" * 60)
     
     return dataframes
